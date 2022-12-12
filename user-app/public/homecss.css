@@ -1,0 +1,154 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+    background-color:#e8c799;
+    margin:0px;
+    padding:0px; 
+	font-family: 'Montserrat', sans-serif;
+	
+/* margini a 0 */
+}
+
+
+a{
+    text-decoration:none; 
+/* no sottotitolato */
+}
+
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+	width:98%;
+    background-color:#25243f;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    padding:0px 2%;
+	position: fixed;
+	top: 0px;
+	z-index:2; /*so that nothing goes over the nav*/
+/* barra navigazione */
+}
+
+
+nav ul li a{
+    margin:40px;
+    color:#ef8f08;
+    font-size: 17px;
+    font-weight:bold;
+	
+}
+
+.subnav {
+
+	margin-left: 50px;
+
+}
+
+.nav-links {
+	list-style: none;
+	/* no punti */
+}
+
+/*image in navigation bar*/
+.logoim{
+    height: 60px;
+	
+	
+}
+
+.lines div{
+	width:20px;
+	height:3px;
+    background-color:#ef8f08;
+	margin:4px;
+	cursor: pointer;
+
+}  
+.nav-links{
+		position:absolute;
+		right:0px;
+		height:97vh;
+		top:5vh;
+		background-color:#25243f;
+		display:flex;
+		flex-direction:column;
+		width:30%;
+		transform:translateX(100%);
+		transition: transform 0.5s ease-in;
+		font-size:100%;
+
+	
+	}
+	.nav-links li {
+		opacity:0;
+		margin:20px;
+		
+	}
+	
+	.lines {
+		display:block;
+		margin-right:20px;
+	}
+
+.nav-active{
+	transform: translateX(0%);
+}
+
+
+@keyframes navLinkFade{
+	from{
+		opacity:0;
+		transform: translateX(50px);
+	}
+	to{
+		opacity:1;
+		transform:translateX(0px);
+	}
+}
+
+.tchart {
+	margin-top: 150px;
+}
+
+#curve_chart, #chart_week, #chart_month, #chart_year, #columnchart_material {
+	width: 1000px;
+	height: 600px;
+	align-self: center;
+	display: block;
+	margin: 0 auto;
+}
+
+#chart_titles {
+	color: #25243f;
+	font-weight: bolder;
+	font-size: 30px;
+	text-align: center;
+
+}
+
+.titlesp {
+	color: #25243f;
+	font-weight: bolder;
+	font-size: 50px;
+	text-align: center;
+	margin-bottom: 50px;
+
+}
+
+p {
+	text-align: center;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+button {
+	height: 50px;
+	width: 200px;
+	font-size: 17px;
+	border-radius: 8px;
+	color: #000080;
+	border: 2px solid #000080;
+	font-family: 'Montserrat', sans-serif;
+	background-color: white;
+}

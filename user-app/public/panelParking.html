@@ -1,0 +1,266 @@
+<!doctype html>
+<meta charset="utf-8">
+<html>
+<head>
+ 
+ <title>Project work</title>
+ <link rel="stylesheet" type="text/css" href="homecss.css"/>
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+ <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+ <script type="text/javascript">
+ 
+    window.addEventListener('scroll', reveal); //fade in effect 
+
+    function reveal(){
+      var reveals = document.querySelectorAll('.reveal');
+
+      for(var i = 0; i < reveals.length; i++){
+
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 100;
+
+        if(revealtop < windowheight - revealpoint){
+          reveals[i].classList.add('active');
+        }
+    
+      }
+    }
+ 
+ </script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript">
+   google.charts.load('current', {'packages':['corechart']});
+   google.charts.setOnLoadCallback(drawChart);
+
+   function drawChart() {
+	 var data = google.visualization.arrayToDataTable([
+	   ['Hours of the day', 'kiloWatt'],
+	   ['12 AM',   0],
+	   ['1 AM',   0],
+	   ['2 AM',   0],
+	   ['3 AM',   0],
+	   ['4 AM',   0],
+	   ['5 AM',   0],
+	   ['6 AM',   1000],
+	   ['7 AM',   1100],
+	   ['8 AM',   1200],
+	   ['9 AM',   1300],
+	   ['10 AM',   1400],
+	   ['11 AM',   1500],
+	   ['12 PM',   2500],
+	   ['1 PM',   3000],
+	   ['2 PM',   3100],
+	   ['3 PM',   3000],
+	   ['4 PM',   2900],
+	   ['5 PM',   2500],
+	   ['6 PM',   2000],
+	   ['7 PM',   1500],
+	   ['8 PM',   200],
+	   ['9 PM',   0],
+	   ['10 PM',   0],
+	   ['11 PM',   0],
+	 ]);
+
+	 var options = {
+	   curveType: 'function',
+	   legend: { position: 'bottom' },
+	   colors: ['#25243f'],
+	   backgroundColor: 'transparent'
+     };
+	 
+	 var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+	 chart.draw(data, options);
+   }
+ </script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript">
+   google.charts.load('current', {'packages':['corechart']});
+   google.charts.setOnLoadCallback(drawChart);
+
+   function drawChart() {
+	 var data = google.visualization.arrayToDataTable([
+	   ['Day of The Week', 'kiloWatt'],
+	   ['Sunday',   10000],
+	   ['Monday',   9000],
+	   ['Tuesday',   1000],
+	   ['Wednesday',   2500],
+	   ['Thursday',   120],
+	   ['Friday',   8000],
+	   ['Saturday',   7500],
+	 ]);
+
+	 var options = {
+	   curveType: 'function',
+	   legend: { position: 'bottom' },
+	   colors: ['#25243f'],
+	   backgroundColor: 'transparent'
+     };
+	 
+	 var chart = new google.visualization.LineChart(document.getElementById('chart_week'));
+	 chart.draw(data, options);
+   }
+ </script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript">
+   google.charts.load('current', {'packages':['corechart']});
+   google.charts.setOnLoadCallback(drawChart);
+
+   function drawChart() {
+	 var data = google.visualization.arrayToDataTable([
+	   ['Weeks', 'kiloWatt'],
+	   ['Week 1',   30000],
+	   ['Week 2',   20000],
+	   ['Week 3',   30500],
+	   ['Week 4',   3000],
+	  
+	 ]);
+
+	 var options = {
+	   curveType: 'function',
+	   legend: { position: 'bottom' },
+	   colors: ['#25243f'],
+	   backgroundColor: 'transparent'
+     };
+	 
+	 var chart = new google.visualization.LineChart(document.getElementById('chart_month'));
+	 chart.draw(data, options);
+   }
+ </script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript">
+   google.charts.load('current', {'packages':['corechart']});
+   google.charts.setOnLoadCallback(drawChart);
+
+   function drawChart() {
+	 var data = google.visualization.arrayToDataTable([
+	   ['Hours of the day', 'kiloWatt'],
+	   ['January',   100000],
+	   ['February',   12000],
+	   ['March',   75000],
+	   ['April',   70000],
+	   ['May',   85000],
+	   ['June',   10000],
+	   ['July',   11000],
+	   ['August',   12000],
+	   ['September',   13000],
+	   ['October',   14000],
+	   ['November',   15000],
+	   ['Decembr',   15000]
+	 ]);
+
+	 var options = {
+	   curveType: 'function',
+	   legend: { position: 'bottom' },
+	   colors: ['#25243f'],
+	   backgroundColor: 'transparent'
+     };
+	 
+	 var chart = new google.visualization.LineChart(document.getElementById('chart_year'));
+	 chart.draw(data, options);
+   }
+ </script>
+</head>
+  </head>
+  <body>
+    <nav>
+      <!-- photo on first line-->
+	  <div class="logo">
+		<a href="home.html" target="_self"> 
+			<img src="images/logo.png" class="logoim" alt="logoim">
+		</a> 
+	   </div>
+		
+	   <h1 style='color:#ef8f08; font-size:35px; ' >CheckYourPanel</h1>
+		<div class="lines">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+	    </div>
+		<ul class="nav-links">
+			<li> <a href="">My Panels</a></li>
+				<div class="subnav">
+				<li> <a href="panelparking.html">Parking Panels</a></li>
+				<li> <a href="panelschool.html">School Panels</a></li>
+				</div>
+			<li> <a href="cons.html">What have you consumed?</a></li>
+			<li> <a href="costofe.html">Cost of Energy</a></li>
+			<li> <a href="wallet.html">Digital Wallet</a></li>
+		</ul>
+		</div>
+	
+    </nav>
+	<script>
+	
+	const navSlide=()=> {
+		const lines =document.querySelector('.lines');
+		const nav =document.querySelector('.nav-links');
+		const navLinks=document.querySelectorAll('.nav-links li');
+		
+		lines.addEventListener('click', () => {
+			nav.classList.toggle('nav-active');
+		
+		//animazioni
+		
+		navLinks.forEach((link, index)=>{
+			if (link.style.animation){
+				link.style.animation =''; 
+			}
+			else {
+				link.style.animation = `navLinkFade 0.5s ease forwards ${index/ 5+0.5}s`;
+			} 
+
+		  });
+		});
+	}
+	navSlide();
+	</script>
+    <div class="tchart">
+
+        <div class="titlesp">
+            Solar Panel system in Parking, Cesena
+        </div>
+	<div id="chart_titles">
+        Energy Gathered Today
+	</div>	
+		
+	</div>
+
+	 <!--Div that will hold the chart-->
+	<div id="curve_chart"></div>
+
+	<div id="chart_titles">
+        Energy Gathered This week
+	</div>	
+		
+	</div>
+
+	 <!--Div that will hold the chart-->
+	<div id="chart_week"></div>
+
+	<div id="chart_titles">
+        Energy Gathered This Month
+	</div>	
+		
+	</div>
+
+	 <!--Div that will hold the chart-->
+	<div id="chart_month"></div>
+
+	<div id="chart_titles">
+        Energy Gathered This Year
+	</div>	
+		
+	</div>
+
+	 <!--Div that will hold the chart-->
+	<div id="chart_year"></div>
+
+	
+	<div class="copyr" style="text-align-last: center;margin-top: 200px;">©Copyright 2022 - CheckYourPanel - Project Work made by Botticelli Margherita, Pajadan Benedetta, Rignanese Francesca
+	</div>
+   
+    
+
+  </body>
+</html>

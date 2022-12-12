@@ -1,0 +1,138 @@
+<!doctype html>
+<meta charset="utf-8">
+<html>
+<head>
+ 
+ <title>Project work</title>
+ <link rel="stylesheet" type="text/css" href="homecss.css"/>
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+ <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+ <script type="text/javascript">
+ 
+    window.addEventListener('scroll', reveal); //fade in effect 
+
+    function reveal(){
+      var reveals = document.querySelectorAll('.reveal');
+
+      for(var i = 0; i < reveals.length; i++){
+
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 100;
+
+        if(revealtop < windowheight - revealpoint){
+          reveals[i].classList.add('active');
+        }
+    
+      }
+    }
+ 
+ </script>
+ 
+</head>
+  </head>
+  <body>
+    <nav>
+      <!-- photo on first line-->
+	  <div class="logo">
+		<a href="home.html" target="_self"> 
+			<img src="images/logo.png" class="logoim" alt="logoim">
+		</a> 
+	   </div>
+		
+	   <h1 style='color:#ef8f08; font-size:35px; ' >CheckYourPanel</h1>
+		<div class="lines">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+	    </div>
+		<ul class="nav-links">
+			<li> <a href="">My Panels</a></li>
+				<div class="subnav">
+				<li> <a href="panelparking.html">Parking Panels</a></li>
+				<li> <a href="panelschool.html">School Panels</a></li>
+				</div>
+			<li> <a href="cons.html">What have you consumed?</a></li>
+			<li> <a href="costofe.html">Cost of Energy</a></li>
+			<li> <a href="wallet.html">Digital Wallet</a></li>
+		</ul>
+		</div>
+	
+    </nav>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Energy Gathered', 'Autoconsumed Energy', 'Consumption'],
+          ['2022', 1675.17, 1028.19, 1068.93]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Consumption compared',
+            Colors: 'black',
+			backgroundColor: {fill: 'transparent'}
+		},
+		titleTextStyle: {
+        color: 'black'
+    	},
+		backgroundColor: {fill: 'transparent'},
+        chartArea: {
+          backgroundColor: 'transparent'
+        },
+		     legend:{ 
+				position: 'left',
+			}
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+
+	<script>
+	
+	const navSlide=()=> {
+		const lines =document.querySelector('.lines');
+		const nav =document.querySelector('.nav-links');
+		const navLinks=document.querySelectorAll('.nav-links li');
+		
+		lines.addEventListener('click', () => {
+			nav.classList.toggle('nav-active');
+		
+		//animazioni
+		
+		navLinks.forEach((link, index)=>{
+			if (link.style.animation){
+				link.style.animation =''; 
+			}
+			else {
+				link.style.animation = `navLinkFade 0.5s ease forwards ${index/ 5+0.5}s`;
+			} 
+
+		  });
+		});
+	}
+	navSlide();
+	</script>
+   <div class="tchart">
+
+	<div class="titlesp">
+		Consumption Panel
+	</div>
+
+
+
+	<div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+
+	<div class="copyr" style="text-align-last: center;margin-top: 200px;">©Copyright 2022 - CheckYourPanel - Project Work made by Botticelli Margherita, Pajadan Benedetta, Rignanese Francesca
+	</div>
+   
+    
+
+  </body>
+</html>
